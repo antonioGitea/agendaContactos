@@ -1,7 +1,7 @@
-Agenda Contactos Toni:
+# Agenda Contactos Toni:
     Proyecto CRUD con Acceso a BDD, trabaja mediante una API REST para gestionar las operaciones.
 
-Funcionalidades:
+## Funcionalidades:
     Al trabajar mediante un despliegue de forma local usaremos localhost para realizar las peticiones, aunque no es la forma correcta.
 
     LISTAR (GENERAL):
