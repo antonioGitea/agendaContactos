@@ -42,8 +42,46 @@
     Git >= 2.52.017
 
 ## Instalacion:
+    ### 1 - Configurar Caddyfile:
+        :80 {
+            root * /var/www/html
+            php_fastcgi php:9000
+            file_server
+        }
 
-## Uso:
+    ### 2 - Configurar Docker Compose:
+        services:
+            caddy:
+                image: caddy:2-alpine
+                ports:
+                - "80:80"
+                volumes:
+                - ./Caddyfile:/etc/caddy/Caddyfile
+                - ./src:/var/www/html
+                depends_on:
+                - php
+
+            php:
+                build: ./php
+                volumes:
+                - ./src:/var/www/html
+
+            db:
+                image: mysql:8.0
+                environment:
+                MYSQL_ROOT_PASSWORD: root
+                MYSQL_DATABASE: agenda
+                MYSQL_USER: root
+                MYSQL_PASSWORD: root
+                volumes:
+                - db_data:/var/lib/mysql
+
+            volumes:
+            db_data:
+
+    ### 3 - Construir Docker File:
+        docker compose up -d --build
+
 
 ## Estructura del Proyecto:
     /agendaContactos
@@ -70,5 +108,10 @@
         | -- docker-compose.yml
         | -- README.md
 
-## Contribucion
+## Acceso y Credenciales:
+    DB_HOST ="proyecto_agenda_tonisanchez-db-1";
+    DB_NAME ="agenda";
+    DB_USER ="root";
+    DB_PASS ="root";
 
+## Contribucion:
