@@ -35,9 +35,40 @@
             }   
 
 
-Requisitos previos:
+## Requisitos previos:
     PHP >= 8.0
     MySQL
     Servidor Caddy
     Git >= 2.52.017
+
+## Instalacion:
+
+## Uso:
+
+## Estructura del Proyecto:
+    /agendaContactos
+        | -- php/
+                | -- Dockerfile
+        | -- src/
+                | -- .phpdoc/
+                        |-- build/
+                        |-- cache/
+                | -- modelos/
+                        |-- Contacto.php
+                | -- vistas/
+                        |-- formCrear.html
+                        |-- formEliminar.html
+                        |-- formModificar.html
+                | -- apiContatos.php
+                | -- conexion.php
+                | -- crearContacto.php
+                | -- eliminarContacto.php
+                | -- index.php
+                | -- indexBueno.php
+                | -- modificarContacto.php
+        | -- Caddyfile
+        | -- docker-compose.yml
+        | -- README.md
+
+## Contribucion
 
