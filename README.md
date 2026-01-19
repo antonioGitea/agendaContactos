@@ -42,14 +42,14 @@
     Git >= 2.52.017
 
 ## Instalacion:
-    ### 1 - Configurar Caddyfile:
+    1 - Configurar Caddyfile:
         :80 {
             root * /var/www/html
             php_fastcgi php:9000
             file_server
         }
 
-    ### 2 - Configurar Docker Compose:
+    2 - Configurar Docker Compose:
         services:
             caddy:
                 image: caddy:2-alpine
@@ -79,7 +79,7 @@
             volumes:
             db_data:
 
-    ### 3 - Construir Docker File:
+    3 - Construir Docker File:
         docker compose up -d --build
 
 
@@ -115,3 +115,16 @@
     DB_PASS ="root";
 
 ## Contribucion:
+    1 - Hacer FORK:
+        git clone https://github.com/antonioGitea/agendaContactos.git
+
+    2 - Crear una BRANCH:
+        git checkout -b funcionalidad/nombre-de-la-mejora
+    
+    3 - Modificar codigo y asegurar el funcionamiento montando el Docker Compose:
+        docker compose up -d --build
+    
+    4 - Confirmar y subir los cambios:
+        git add .
+        git commit -m "Descripción breve de la funcionalidad"
+        git push origin funcionalidad/nombre-de-la-mejora
